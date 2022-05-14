@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Главная</title>
+   <meta name="description" content="Веб-разработчик">
+   <link rel="stylesheet" href="css/style.min.css?_v=20220514214421">
+   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js?_v=20220514214421"></script>
+   <script defer src="js/app.min.js?_v=20220514214421"></script>
+</head>
+
+<body id="body">
+    <div class="modal">
+        <form class="form">
+            <a class="modal__close">X</a>
+            <input type="hidden" name="project_name" value="Веб-разработчик">
+            <input type="hidden" name="admin_email" value="nikulinkv@yandex.ru">
+            <input type="hidden" name="form_subject" value="Заявка">
+            <h4 class="form__header">Оставьте заявку и я свяжусь с Вами в течении 15 минут</h4>
+            <input class="form__input" type="text" name="name" id="name" placeholder="Ваше имя" title="Введите Ваше имя"
+                required>
+            <input class="form__input" type="tel" name="phone" id="phone" placeholder="+7 (___) ___-__-__"
+                title="Введите Ваш телефон" required>
+            <textarea class="form__text" name="text" id="text" rows="3" placeholder="Ваше сообщение"
+                title="Напишите Ваше сообщение" required></textarea>
+            <button class="form__button button-red" type="submit">Отправить заявку</button>
+        </form>
+        <div class="thank-you">
+            <a class="modal__close">X</a>
+            <h1>Спасибо!</h1>
+            <p>Мы свяжемся с Вами в течении 15 минут</p>
+        </div>
+    </div>
+    <header class="header">
+   <span class="header__icon" id="icon-1">&lt;div&gt;</span>
+   <span class="header__icon" id="icon-2">&lt;div&gt;</span>
+   <span class="header__icon" id="icon-3">{ }</span>
+   <span class="header__icon" id="icon-4">#</span>
+   <span class="header__icon" id="icon-5">&lt;/&gt;</span>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12 d-flex align-items-center justify-content-between flex-wrap">
+            <div class="menu__icon">
+               <span></span>
+            </div>
+            <nav>
+               <ul class="menu">
+                  <li class="menu__item">
+                     <a class="menu__link" href="#about">Услуги</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__link" href="#features">Портфолио</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__link" href="#price">Стоимость</a>
+                  </li>
+               </ul>
+            </nav>
+            <div class="phone d-flex align-items-center justify-content-end">
+               <a class="menu__link phone__link" href="tel:+79321114061">+7 (932) 111-40-61</a>
+               <button class="phone__button button-pink" name="phone__button" type="submit" data-target="modal">Заказать
+                  звонок</button>
+            </div>
+            <a class="phone__button-mobile" href="tel:+79321114061"><img src="img/call.png" alt="Позвонить"
+                  aria-label="phone__button-mobile"></a>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6 d-flex align-items-center">
+            <div class="head">
+               <h1 class="head__name">Константин Никулин</h1>
+               <p class="head__description">Frontend-разработчик и веб-верстальщик</p>
+               <button class="head__button button-red" data-target="modal">Узнать стоимость</button>
+            </div>
+         </div>
+         <div class="col-md-6 d-none d-md-block">
+            <picture><source srcset="img/face.webp" type="image/webp"><img class="man" src="img/face.png" alt="Человек"></picture>
+         </div>
+      </div>
+   </div>
+</header>
+    <main>
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="about__header">Что я делаю</h2>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6">
+                        <p class="about__item-1 about__description">Вёрстка лендинг–страниц и сайтов любой сложности</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <p class="about__item-2 about__description">Адаптивная вёрстка под все браузеры и устройства</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <p class="about__item-3 about__description">Frontend–разработка и программирование</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <p class="about__item-4 about__description">Исправление и доработка существующей вёрстки</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="about__button button-red" data-target="modal">Узнать стоимость</button>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <h2 class="portfolio__header">Примеры моих работ</h2>
+                <div class="row position-relative">
+                    <div class="wrap__arrow d-none d-md-flex">
+                        <i class="bi bi-chevron-left arrow-left"></i>
+                        <i class="bi bi-chevron-right arrow-right"></i>
+                    </div>
+                    <div class="owl-carousel owl-theme">
+                        <div>
+                            <a href="https://nikulinkv.github.io/test/" target="_blank">
+                                <picture><source srcset="img/2-1.webp" type="image/webp"><img src="img/2-1.jpg" alt="Сайт психолога"></picture>
+                            </a>
+                            <p class="owl-carousel__description">Сайт психолога Веры Антоновой</p>
+                        </div>
+                        <div>
+                            <picture><source srcset="img/2-2.webp" type="image/webp"><img src="img/2-2.jpg" alt="Сайт детской одежды"></picture>
+                            <p class="owl-carousel__description">Сайт магазина детской одежды</p>
+                        </div>
+                        <div>
+                            <picture><source srcset="img/2-3.webp" type="image/webp"><img src="img/2-3.jpg" alt="Сайт Рыболов"></picture>
+                            <p class="owl-carousel__description">Сайт магазина «Рыболов»</p>
+                        </div>
+                    </div>
+                    <div class="owl-dots"></div>
+                </div>
+                <div class="row">
+                    <button class="portfolio__button button-red" data-target="modal">Заказать
+                        проект</button>
+                </div>
+            </div>
+        </section>
+        <section class="price" id="price">
+            <span class="price__icon" id="icon-6">&lt;div&gt;</span>
+            <span class="price__icon" id="icon-7">{ }</span>
+            <span class="price__icon" id="icon-8">{ }</span>
+            <span class="price__icon" id="icon-9">#</span>
+            <span class="price__icon" id="icon-10">&lt;/&gt;</span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="price__header">Адаптивная вёрстка под все устройства и браузеры от 1000 рублей всего
+                            за 4
+                            часа.*</h3>
+                        <p class="price__description">* Срок и стоимость могут отличаться от заявленных и рассчитываются
+                            индивидуально, в зависимости
+                            от сложности задач.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-4 col-md-12 d-flex align-items-center">
+            <nav>
+               <ul class="menu">
+                  <li class="menu__item">
+                     <a class="menu__link" href="#about">Услуги</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__link" href="#features">Портфолио</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__link" href="#price">Стоимость</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+         <div class="col-lg-4 col-md-12 d-flex align-items-center justify-content-start justify-content-lg-center">
+            <address class="address">
+               <ul class="menu">
+                  <li class="menu__item d-flex flex-row-reverse justify-content-end">
+                     <a class="menu__link" href="tel:+79321114061">+7(932)111-40-61</a>
+                     <i class="bi bi-telephone icon" aria-hidden="true"></i>
+                  </li>
+                  <li class="menu__item d-flex flex-row-reverse justify-content-end">
+                     <a class="menu__link" href="mailto:nikulinkv@yandex.ru">nikulinkv@yandex.ru</a>
+                     <i class="bi bi-envelope" aria-hidden="true"></i>
+                  </li>
+               </ul>
+            </address>
+         </div>
+         <div class="col-lg-4 col-md-12 d-flex align-items-center justify-content-lg-end">
+            <button class="footer__button button-pink" type="submit" name="footer__button" data-target="modal">Заказать
+               звонок</button>
+         </div>
+      </div>
+   </div>
+</footer>
+
+</body>
+
+</html>
