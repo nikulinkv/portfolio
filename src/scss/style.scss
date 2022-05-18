@@ -57,6 +57,10 @@ html {
     border-radius: 5px;
     background-color: $white-color;
     display: none;
+
+    &.active {
+        display: block;
+    }
 }
 
 .form {
@@ -67,9 +71,9 @@ html {
 
     &__input,
     &__text {
+        width: 100%;
         padding: 15px 10px 15px;
-        width: 70%;
-        margin: 30px auto;
+        margin: 20px auto 0;
         border-radius: 5px;
         display: block;
         border: $orange-color 2px solid;
@@ -79,6 +83,21 @@ html {
         font-weight: normal;
         background-color: #fff;
         resize: none;
+
+        &~span {
+            display: none;
+        }
+
+        &.error {
+            border-color: red;
+
+            &+span {
+                display: block;
+                font-size: 12px;
+                margin: 5px auto;
+                color: red;
+            }
+        }
 
         &::-webkit-scrollbar {
             width: 0.5em;
@@ -94,18 +113,16 @@ html {
         }
     }
 
-    &__button {
-        margin: 0 auto;
-        padding: 15px 40px;
-    }
-}
-
-.error {
-    border-bottom: red 2px solid;
-
-    &::placeholder {
+    .error__text {
+        font-size: 12px;
         color: red;
-        font-weight: bold;
+        width: 70%;
+        margin: 2px auto 0;
+    }
+
+    &__button {
+        margin: 20px auto 0;
+        padding: 15px 40px;
     }
 }
 
@@ -147,6 +164,7 @@ html {
         background: linear-gradient(to top right, #ec9f05, #EF5026);
         background-clip: text;
         -webkit-text-fill-color: transparent;
+        z-index: 0
     }
 }
 
@@ -281,6 +299,8 @@ html {
 }
 
 .head {
+    z-index: 5;
+
     &__button {
         margin-top: 50px;
     }
@@ -300,6 +320,11 @@ html {
 
 .mobile__head {
     text-align: center;
+}
+
+.portfolio {
+    width: auto;
+    height: 100%;
 }
 
 .about,

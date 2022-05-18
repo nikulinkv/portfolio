@@ -68,8 +68,9 @@ export function modal() {
    document.querySelectorAll('[data-target=modal]').forEach(openButton => {
 
       let modal = document.querySelector('.modal');
-      let closeButton = document.querySelector('.modal__close');
-      let textArea = document.querySelector('.form__text');
+      let closeButton = modal.querySelector('.modal__close');
+      let textArea = modal.querySelector('.form__text');
+      let formInputs = modal.querySelectorAll('.form__input, .form__text')
 
       openButton.addEventListener('click', function () {
          if (modal) {
@@ -80,7 +81,9 @@ export function modal() {
       textArea.addEventListener('focus', function () {
          document.removeEventListener("keydown", noKeyPress)
       });
+
       closeButton.addEventListener('click', function (e) {
+
          if (modal) {
             modal.classList.remove('active');
             enableScroll();
@@ -88,3 +91,4 @@ export function modal() {
       });
    });
 };
+
