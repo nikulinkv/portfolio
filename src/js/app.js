@@ -8,34 +8,7 @@ flsFunctions.modal();
 
 (function () {
 
-    const iconMenu = document.querySelector('.menu__icon');
-    const headerMenu = document.querySelector('.menu');
 
-    if (iconMenu) {
-        iconMenu.addEventListener("click", function (e) {
-            iconMenu.classList.toggle('active');
-            headerMenu.classList.toggle('active');
-            if (headerMenu.classList.contains('active')) {
-                disableScroll();
-            } else {
-                enableScroll();
-            };
-        });
-        document.querySelectorAll('.menu__link').forEach(function (itemMenu) {
-            itemMenu.addEventListener("click", function () {
-                iconMenu.classList.remove('active');
-                headerMenu.classList.remove('active');
-                enableScroll();
-            });
-        });
-    };
-
-    window.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll("span[id^=icon]").forEach(function (flyIcons) {
-            flyIcons.classList.add('icon_fly');
-        }
-        )
-    })
 
     $(".owl-carousel").owlCarousel({
         loop: !0,

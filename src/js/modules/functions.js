@@ -38,32 +38,34 @@ export function smoothScroll() {
 
 export function modal() {
 
-   const noDefault = function (e) {
-      e.preventDefault()
-   };
+   const iconMenu = document.querySelector('.menu__icon');
+   const headerMenu = document.querySelector('.menu');
 
-   const noKeyPress = function (e) {
-      let keyArray = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown', ' ', 'Tab', 'Enter']
-      for (let keyOff of keyArray) {
-         if (e.key === keyOff) {
-            e.preventDefault()
-         }
-      }
-   };
-
-   const disableScroll = function (e) {
-      window.addEventListener("mousewheel", noDefault, {
-         passive: !1
+   if (iconMenu) {
+      iconMenu.addEventListener("click", function (e) {
+         iconMenu.classList.toggle('active');
+         headerMenu.classList.toggle('active');
+         if (headerMenu.classList.contains('active')) {
+            disableScroll();
+         } else {
+            enableScroll();
+         };
       });
-      document.addEventListener("keydown", noKeyPress);
+      document.querySelectorAll('.menu__link').forEach(function (itemMenu) {
+         itemMenu.addEventListener("click", function () {
+            iconMenu.classList.remove('active');
+            headerMenu.classList.remove('active');
+            enableScroll();
+         });
+      });
    };
 
-   const enableScroll = function (e) {
-      window.removeEventListener("mousewheel", noDefault, {
-         passive: !1
-      })
-      document.removeEventListener("keydown", noKeyPress)
-   };
+   window.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll("span[id^=icon]").forEach(function (flyIcons) {
+         flyIcons.classList.add('icon_fly');
+      }
+      )
+   })
 
    document.querySelectorAll('[data-target=modal]').forEach(openButton => {
 
@@ -90,5 +92,31 @@ export function modal() {
          };
       });
    });
-};
 
+   function noDefault(e) {
+      e.preventDefault()
+   };
+
+   function noKeyPress(e) {
+      let keyArray = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown', ' ', 'Tab', 'Enter']
+      for (let keyOff of keyArray) {
+         if (e.key === keyOff) {
+            e.preventDefault()
+         }
+      }
+   };
+
+   function disableScroll(e) {
+      window.addEventListener("mousewheel", noDefault, {
+         passive: !1
+      });
+      document.addEventListener("keydown", noKeyPress);
+   };
+
+   function enableScroll(e) {
+      window.removeEventListener("mousewheel", noDefault, {
+         passive: !1
+      })
+      document.removeEventListener("keydown", noKeyPress);
+   };
+};

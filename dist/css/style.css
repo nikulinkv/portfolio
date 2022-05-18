@@ -5856,6 +5856,7 @@ html {
   }
   .header .menu.active {
     transform: translateX(0);
+    z-index: 100;
   }
   .header .menu__item {
     display: block;
@@ -5910,6 +5911,9 @@ html {
     transform: rotate(-45deg) translate(0px, 50%);
   }
 
+  .head {
+    z-index: 0;
+  }
   .head__name {
     font-size: 3.5rem;
   }
